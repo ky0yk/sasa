@@ -1,7 +1,5 @@
 'use strict';
 
-const ctx = document.getElementById('myChart')
-
 const assessmentButton = document.getElementById('assessment');
 const network = document.getElementById('network')
 
@@ -9,7 +7,16 @@ const network = document.getElementById('network')
 assessmentButton.onclick = () => {
     console.log(network.network.value)
     // resultをセットする
+    // グラフ作成
+    CreateChart();
 }
+
+// グラフ作成
+const CreateChart = () => {
+    const ctx = document.createElement('canvas');
+    document.getElementById('chart-area').appendChild(ctx);
+    new Chart(ctx, config);
+};
 
 let result = [2, 3, 3, 5, 4, 3]
 
@@ -57,4 +64,6 @@ const config = {
     },
 };
 
-var myChart = new Chart(ctx, config);
+
+
+
