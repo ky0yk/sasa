@@ -8,8 +8,17 @@ body {
 
 img {
   width: 600px;
+  margin-top: 10px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 20px;
+}
+
+div.form-group {
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
 }
 
 .btn {
@@ -17,4 +26,12 @@ img {
   color: #fdffff;
   padding: 5px 20px;
   border-style: none;
+}
+
+#chart-area {
+  background-color: #fdffff;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
 }

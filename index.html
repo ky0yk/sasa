@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
 
-    <!-- My CSS -->    
+    <!-- My CSS -->
     <link rel="stylesheet" href="index.css" />
     <title>笹 -SASA-</title>
-  
- 
   </head>
   <body>
     <h1 class="display-1">笹 -SASA-</h1>
@@ -22,8 +25,6 @@
     </p>
 
     <img src="sasa_image.jpg" />
-    <br />
-    <br />
 
     <div class="form-group">
       <label class="control-label"><h4>名前（表示用）</h4></label>
@@ -31,165 +32,168 @@
         <input type="text" class="form-control" id="user-name" />
       </div>
     </div>
-    <br />
-    <br />
-    <form id="network">
-      <h4>ネットワーク</h4>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="1" />
-        <label><h5>超苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="2" />
-        <label><h5>苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="3" checked />
-        <label><h5>普通</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="4" />
-        <label><h5>得意</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="5" />
-        <label><h5>超得意</h5></label>
-      </div>
-    </form>
-    <br />
 
-    <form id="security">
-      <h4>セキュリティ</h4>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="1" />
-        <label><h5>超苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="2" />
-        <label><h5>苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="3" checked />
-        <label><h5>普通</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="4" />
-        <label><h5>得意</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="5" />
-        <label><h5>超得意</h5></label>
-      </div>
-    </form>
-    <br />
-
-    <form id="data-analytics">
-      <h4>データ分析</h4>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="1" />
-        <label><h5>超苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="2" />
-        <label><h5>苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="3" checked />
-        <label><h5>普通</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="4" />
-        <label><h5>得意</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="5" />
-        <label><h5>超得意</h5></label>
-      </div>
-    </form>
-    <br />
-
-    <form id="domain-knowledge">
-      <h4>ドメイン知識</h4>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="1" />
-        <label><h5>超苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="2" />
-        <label><h5>苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="3" checked />
-        <label><h5>普通</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="4" />
-        <label><h5>得意</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="5" />
-        <label><h5>超得意</h5></label>
-      </div>
-    </form>
-    <br />
-
-    <form id="application">
-      <h4>アプリケーション</h4>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="1" />
-        <label><h5>超苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="2" />
-        <label><h5>苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="3" checked />
-        <label><h5>普通</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="4" />
-        <label><h5>得意</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="5" />
-        <label><h5>超得意</h5></label>
-      </div>
-    </form>
-    <br />
-
-    <form id="contents-delivery">
-      <h4>配信</h4>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="1" />
-        <label><h5>超苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="2" />
-        <label><h5>苦手</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="3" checked />
-        <label><h5>普通</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="4" />
-        <label><h5>得意</h5></label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input name="level" type="radio" value="5" />
-        <label><h5>超得意</h5></label>
-      </div>
-    </form>
-    <br />
-      <br />
-      <button class="btn btn-success" id="assessment">診断する</button>
+    <div class="form-group">
+      <form id="network">
+        <h4>ネットワーク</h4>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="1" />
+          <label><h5>超苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="2" />
+          <label><h5>苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="3" checked />
+          <label><h5>普通</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="4" />
+          <label><h5>得意</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="5" />
+          <label><h5>超得意</h5></label>
+        </div>
+      </form>
     </div>
 
-    <div id="chart-area" 　width="300"></div>
+    <div class="form-group">
+      <form id="security">
+        <h4>セキュリティ</h4>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="1" />
+          <label><h5>超苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="2" />
+          <label><h5>苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="3" checked />
+          <label><h5>普通</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="4" />
+          <label><h5>得意</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="5" />
+          <label><h5>超得意</h5></label>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-group">
+      <form id="data-analytics">
+        <h4>データ分析</h4>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="1" />
+          <label><h5>超苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="2" />
+          <label><h5>苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="3" checked />
+          <label><h5>普通</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="4" />
+          <label><h5>得意</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="5" />
+          <label><h5>超得意</h5></label>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-group">
+      <form id="domain-knowledge">
+        <h4>ドメイン知識</h4>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="1" />
+          <label><h5>超苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="2" />
+          <label><h5>苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="3" checked />
+          <label><h5>普通</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="4" />
+          <label><h5>得意</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="5" />
+          <label><h5>超得意</h5></label>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-group">
+      <form id="application">
+        <h4>アプリケーション</h4>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="1" />
+          <label><h5>超苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="2" />
+          <label><h5>苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="3" checked />
+          <label><h5>普通</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="4" />
+          <label><h5>得意</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="5" />
+          <label><h5>超得意</h5></label>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-group">
+      <form id="contents-delivery">
+        <h4>配信</h4>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="1" />
+          <label><h5>超苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="2" />
+          <label><h5>苦手</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="3" checked />
+          <label><h5>普通</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="4" />
+          <label><h5>得意</h5></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input name="level" type="radio" value="5" />
+          <label><h5>超得意</h5></label>
+        </div>
+      </form>
+    </div>
+
+    <button class="btn btn-success" id="assessment">診断する</button>
+
+    <div id="chart-area"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="index.js"></script>
-
   </body>
 </html>
