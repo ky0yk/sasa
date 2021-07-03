@@ -1,9 +1,12 @@
 'use strict';
 
 const assessmentButton = document.getElementById('assessment');
+const userNameInput = document.getElementById('user-name');
 
 assessmentButton.onclick = () => {
     //console.log(network.network.value)
+    // ユーザー名をセット
+    setUserName();
     // resultをセットする
     data.datasets[0].data = skillParams()
     //console.log(data.datasets[0].data)
@@ -24,6 +27,13 @@ const CreateChart = () => {
     new Chart(ctx, config);
 };
 
+
+// ユーザー名をセット
+const setUserName = () => {
+    const userName = userNameInput.value
+    options.plugins.title.text = `${userName}のSAスキル`
+}
+
 // スキルパラメーター取得
 const skillParams = () => {
     // TODO ハードコードをなんとかする
@@ -37,6 +47,7 @@ const skillParams = () => {
     ].map(i => parseInt(i))
     return params
 }
+
 
 
 const data = {
@@ -71,26 +82,37 @@ const data = {
     }]
 };
 
+const options = {
+    elements: {
+        line: {
+            borderWidth: 3
+        }
+    },
+    scales: {
+        r: {
+            angleLines: {
+                display: false
+            },
+            suggestedMin: 1,
+            suggestedMax: 5
+        }
+    },
+    plugins: {
+        title: {
+            display: true,
+            text: 'カスタムチャートタイトル',
+            font: {
+                size: 30
+            }
+        }
+    }
+}
+
 
 const config = {
     type: 'radar',
     data: data,
-    options: {
-        elements: {
-            line: {
-                borderWidth: 3
-            }
-        },
-        scales: {
-            r: {
-                angleLines: {
-                    display: false
-                },
-                suggestedMin: 1,
-                suggestedMax: 5
-            }
-        }
-    },
+    options: options,
 };
 
 
