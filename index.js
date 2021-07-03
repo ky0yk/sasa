@@ -3,7 +3,7 @@
 const assessmentButton = document.getElementById('assessment');
 
 assessmentButton.onclick = () => {
-    console.log(network.network.value)
+    //console.log(network.network.value)
     // resultをセットする
     data.datasets[0].data = skillParams()
     //console.log(data.datasets[0].data)
@@ -13,8 +13,14 @@ assessmentButton.onclick = () => {
 
 // グラフ作成
 const CreateChart = () => {
+    const parent = document.getElementById('chart-area')
+    const children = document.getElementsByTagName('canvas')
+    // すでにグラフがあるか判定
+    if (children.length != 0) {
+        parent.removeChild(children[0]);
+    }
     const ctx = document.createElement('canvas');
-    document.getElementById('chart-area').appendChild(ctx);
+    parent.appendChild(ctx);
     new Chart(ctx, config);
 };
 
