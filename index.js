@@ -4,51 +4,41 @@ const assessmentButton = document.getElementById('assessment');
 const userNameInput = document.getElementById('user-name');
 
 assessmentButton.onclick = () => {
-    //console.log(network.network.value)
-    // ユーザー名をセット
     setUserName();
-    // resultをセットする
-    data.datasets[0].data = skillParams()
-    //console.log(data.datasets[0].data)
-    // グラフ作成
-    CreateChart();
+    setSkillParams();
+    renderChart();
 }
 
-// グラフ作成
-const CreateChart = () => {
-    const parent = document.getElementById('chart-area')
-    const children = document.getElementsByTagName('canvas')
-    // すでにグラフがあるか判定
-    if (children.length != 0) {
-        parent.removeChild(children[0]);
-    }
-    const ctx = document.createElement('canvas');
-    parent.appendChild(ctx);
-    new Chart(ctx, config);
+const setUserName = () => {
+    const userName = userNameInput.value ? userNameInput.value : '名無しさん';
+    options.plugins.title.text = `${userName}のSAスキル`;
 };
 
-
-// ユーザー名をセット
-const setUserName = () => {
-    const userName = userNameInput.value
-    options.plugins.title.text = `${userName}のSAスキル`
-}
-
-// スキルパラメーター取得
-const skillParams = () => {
+const setSkillParams = () => {
     // TODO ハードコードをなんとかする
-    const params = [
+    const skillParams = [
         document.getElementById('network').network.value,
         document.getElementById('security').security.value,
         document.getElementById('data-analytics').dataAnalytics.value,
         document.getElementById('domain-knowledge').domainKnowledge.value,
         document.getElementById('application').application.value,
         document.getElementById('contents-delivery').contentsDelivery.value,
-    ].map(i => parseInt(i))
-    return params
-}
+    ].map(i => parseInt(i));
+    data.datasets[0].data = skillParams;
+};
 
-
+const renderChart = () => {
+    const parent = document.getElementById('chart-area')
+    const children = document.getElementsByTagName('canvas')
+    // すでにグラフがあるか判定し、あれば全て削除
+    if (parent.hasChildNodes()) {
+        // HTMLコレクションのままではforEachが使えない
+        Array.prototype.forEach.call(children, child => parent.removeChild(child));
+    };
+    const ctx = document.createElement('canvas');
+    parent.appendChild(ctx);
+    new Chart(ctx, config);
+};
 
 const data = {
     labels: [
@@ -100,7 +90,7 @@ const options = {
     plugins: {
         title: {
             display: true,
-            text: 'カスタムチャートタイトル',
+            text: 'TBD',
             font: {
                 size: 30
             }
