@@ -15,17 +15,12 @@ const setUserName = () => {
 };
 
 const setSkillParams = () => {
-    // TODO ハードコードをなんとかする
-    const skillParams = [
-        document.getElementById('network').network.value,
-        document.getElementById('security').security.value,
-        document.getElementById('data-analytics').dataAnalytics.value,
-        document.getElementById('domain-knowledge').domainKnowledge.value,
-        document.getElementById('application').application.value,
-        document.getElementById('contents-delivery').contentsDelivery.value,
-    ].map(i => parseInt(i));
+    // skillItemに対応する入力値をループで取得し、配列にする
+    const skillParams = Object.keys(skillItems).map(key => {
+        return document.getElementById(key).level.value
+    })
     data.datasets[0].data = skillParams;
-};
+}
 
 const renderChart = () => {
     const parent = document.getElementById('chart-area')
@@ -40,15 +35,19 @@ const renderChart = () => {
     new Chart(ctx, config);
 };
 
+const skillItems = {
+    'network': 'ネットワーク',
+    'security': 'セキュリティ',
+    'data-analytics': 'データ分析',
+    'domain-knowledge': 'ドメイン知識',
+    'application': 'アプリケーション',
+    'contents-delivery': '配信'
+};
+
+const labels = Object.values(skillItems);
+
 const data = {
-    labels: [
-        'ネットワーク',
-        'セキュリティ',
-        'データ分析',
-        'ドメイン知識',
-        'アプリケーション',
-        '配信'
-    ],
+    labels: labels,
     datasets: [{
         label: 'あなた',
         data: null,
