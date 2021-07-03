@@ -2,12 +2,14 @@
 
 const assessmentButton = document.getElementById('assessment');
 const userNameInput = document.getElementById('user-name');
+const chartArea = document.getElementById('chart-area');
 
 assessmentButton.onclick = () => {
     setUserName();
     setSkillParams();
     renderChart();
-}
+    scrollToChartArea();
+};
 
 const setUserName = () => {
     const userName = userNameInput.value ? userNameInput.value : '名無しさん';
@@ -20,19 +22,23 @@ const setSkillParams = () => {
         return document.getElementById(key).level.value
     })
     data.datasets[0].data = skillParams;
-}
+};
 
 const renderChart = () => {
-    const parent = document.getElementById('chart-area')
     const children = document.getElementsByTagName('canvas')
-    // すでにグラフがあるか判定し、あれば全て削除
-    if (parent.hasChildNodes()) {
+    // すでにチャートがあるか判定し、あれば全て削除
+    if (chartArea.hasChildNodes()) {
         // HTMLコレクションのままではforEachが使えない
         Array.prototype.forEach.call(children, child => parent.removeChild(child));
     };
     const ctx = document.createElement('canvas');
-    parent.appendChild(ctx);
+    chartArea.appendChild(ctx);
     new Chart(ctx, config);
+};
+
+const scrollToChartArea = () => {
+    const chartPosition = chartArea.getBoundingClientRect();
+    window.scrollTo(0, chartPosition.top);
 };
 
 const skillItems = {
