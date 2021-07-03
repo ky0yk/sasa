@@ -48,6 +48,7 @@ const labels = Object.values(skillItems);
 
 const data = {
     labels: labels,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     datasets: [{
         label: 'あなた',
         data: null,
@@ -62,16 +63,23 @@ const data = {
         label: '部門平均',
         data: [3, 3, 3, 3, 3, 3],
         fill: true,
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgb(54, 162, 235)',
-        pointBackgroundColor: 'rgb(54, 162, 235)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgb(54, 162, 235)'
     }]
 };
 
+const backgroundColorPlugin = {
+    id: 'custom_canvas_background_color',
+    beforeDraw: (chart) => {
+        const ctx = chart.canvas.getContext('2d');
+        ctx.save();
+        ctx.globalCompositeOperation = 'destination-over';
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, chart.width, chart.height);
+        ctx.restore();
+    }
+};
+
 const options = {
+    responsive: true,
     elements: {
         line: {
             borderWidth: 3
@@ -79,11 +87,17 @@ const options = {
     },
     scales: {
         r: {
-            angleLines: {
+            min: 0,
+            max: 5,
+            ticks: {
+                stepSize: 1,
                 display: false
             },
-            suggestedMin: 1,
-            suggestedMax: 5
+            pointLabels: {
+                font: {
+                    size: 20
+                },
+            },
         }
     },
     plugins: {
@@ -92,6 +106,13 @@ const options = {
             text: 'TBD',
             font: {
                 size: 30
+            }
+        },
+        legend: {
+            labels: {
+                font: {
+                    size: 15
+                }
             }
         }
     }
@@ -102,8 +123,7 @@ const config = {
     type: 'radar',
     data: data,
     options: options,
+    plugins: [backgroundColorPlugin],
 };
-
-
 
 
