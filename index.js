@@ -29,7 +29,7 @@ const renderChart = () => {
     // すでにチャートがあるか判定し、あれば全て削除
     if (chartArea.hasChildNodes()) {
         // HTMLコレクションのままではforEachが使えない
-        Array.prototype.forEach.call(children, child => parent.removeChild(child));
+        Array.prototype.forEach.call(children, child => chartArea.removeChild(child));
     };
     const ctx = document.createElement('canvas');
     chartArea.appendChild(ctx);
